@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.EmpDao">
+
+    <resultMap type="com.entity.Emp" id="EmpMap">
+        <result property="empid" column="empId" jdbcType="INTEGER"/>
+        <result property="empname" column="empName" jdbcType="VARCHAR"/>
+        <result property="empsex" column="empSex" jdbcType="VARCHAR"/>
+        <result property="empphone" column="empPhone" jdbcType="VARCHAR"/>
+        <result property="empemail" column="empEmail" jdbcType="VARCHAR"/>
+        <result property="empeducation" column="empEducation" jdbcType="VARCHAR"/>
+        <result property="empcardno" column="empCardNo" jdbcType="VARCHAR"/>
+        <result property="empaddress" column="empAddress" jdbcType="VARCHAR"/>
+        <result property="empcreatetime" column="empCreateTime" jdbcType="OTHER"/>
+        <result property="empbirthday" column="empBirthday" jdbcType="OTHER"/>
+        <result property="emphobby" column="empHobby" jdbcType="VARCHAR"/>
+        <result property="jobid" column="jobId" jdbcType="INTEGER"/>
+        <result property="deptid" column="deptId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="EmpMap">
+        select
+          empId, empName, empSex, empPhone, empEmail, empEducation, empCardNo, empAddress, empCreateTime, empBirthday, empHobby, jobId, deptId
+        from pms.emp
+        where empId = #{empid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="EmpMap">
+        select
+          empId, empName, empSex, empPhone, empEmail, empEducation, empCardNo, empAddress, empCreateTime, empBirthday, empHobby, jobId, deptId
+        from pms.emp
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="EmpMap">
+        select
+          empId, empName, empSex, empPhone, empEmail, empEducation, empCardNo, empAddress, empCreateTime, empBirthday, empHobby, jobId, deptId
+        from pms.emp
+        <where>
+            <if test="empid != null">
+                and empId = #{empid}
+            </if>
+            <if test="empname != null and empname != ''">
+                and empName = #{empname}
+            </if>
+            <if test="empsex != null and empsex != ''">
+                and empSex = #{empsex}
+            </if>
+            <if test="empphone != null and empphone != ''">
+                and empPhone = #{empphone}
+            </if>
+            <if test="empemail != null and empemail != ''">
+                and empEmail = #{empemail}
+            </if>
+            <if test="empeducation != null and empeducation != ''">
+                and empEducation = #{empeducation}
+            </if>
+            <if test="empcardno != null and empcardno != ''">
+                and empCardNo = #{empcardno}
+            </if>
+            <if test="empaddress != null and empaddress != ''">
+                and empAddress = #{empaddress}
+            </if>
+            <if test="empcreatetime != null">
+                and empCreateTime = #{empcreatetime}
+            </if>
+            <if test="empbirthday != null">
+                and empBirthday = #{empbirthday}
+            </if>
+            <if test="emphobby != null and emphobby != ''">
+                and empHobby = #{emphobby}
+            </if>
+            <if test="jobid != null">
+                and jobId = #{jobid}
+            </if>
+            <if test="deptid != null">
+                and deptId = #{deptid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="empid" useGeneratedKeys="true">
+        insert into pms.emp(empName, empSex, empPhone, empEmail, empEducation, empCardNo, empAddress, empCreateTime, empBirthday, empHobby, jobId, deptId)
+        values (#{empname}, #{empsex}, #{empphone}, #{empemail}, #{empeducation}, #{empcardno}, #{empaddress}, #{empcreatetime}, #{empbirthday}, #{emphobby}, #{jobid}, #{deptid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update pms.emp
+        <set>
+            <if test="empname != null and empname != ''">
+                empName = #{empname},
+            </if>
+            <if test="empsex != null and empsex != ''">
+                empSex = #{empsex},
+            </if>
+            <if test="empphone != null and empphone != ''">
+                empPhone = #{empphone},
+            </if>
+            <if test="empemail != null and empemail != ''">
+                empEmail = #{empemail},
+            </if>
+            <if test="empeducation != null and empeducation != ''">
+                empEducation = #{empeducation},
+            </if>
+            <if test="empcardno != null and empcardno != ''">
+                empCardNo = #{empcardno},
+            </if>
+            <if test="empaddress != null and empaddress != ''">
+                empAddress = #{empaddress},
+            </if>
+            <if test="empcreatetime != null">
+                empCreateTime = #{empcreatetime},
+            </if>
+            <if test="empbirthday != null">
+                empBirthday = #{empbirthday},
+            </if>
+            <if test="emphobby != null and emphobby != ''">
+                empHobby = #{emphobby},
+            </if>
+            <if test="jobid != null">
+                jobId = #{jobid},
+            </if>
+            <if test="deptid != null">
+                deptId = #{deptid},
+            </if>
+        </set>
+        where empId = #{empid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from pms.emp where empId = #{empid}
+    </delete>
+
+</mapper>

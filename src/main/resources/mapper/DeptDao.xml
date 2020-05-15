@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DeptDao">
+
+    <resultMap type="com.entity.Dept" id="DeptMap">
+        <result property="deptid" column="deptId" jdbcType="INTEGER"/>
+        <result property="deptname" column="deptName" jdbcType="VARCHAR"/>
+        <result property="deptinfo" column="deptInfo" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="DeptMap">
+        select
+          deptId, deptName, deptInfo
+        from pms.dept
+        where deptId = #{deptid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DeptMap">
+        select
+          deptId, deptName, deptInfo
+        from pms.dept
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="DeptMap">
+        select
+          deptId, deptName, deptInfo
+        from pms.dept
+        <where>
+            <if test="deptid != null">
+                and deptId = #{deptid}
+            </if>
+            <if test="deptname != null and deptname != ''">
+                and deptName = #{deptname}
+            </if>
+            <if test="deptinfo != null and deptinfo != ''">
+                and deptInfo = #{deptinfo}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="deptid" useGeneratedKeys="true">
+        insert into pms.dept(deptName, deptInfo)
+        values (#{deptname}, #{deptinfo})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update pms.dept
+        <set>
+            <if test="deptname != null and deptname != ''">
+                deptName = #{deptname},
+            </if>
+            <if test="deptinfo != null and deptinfo != ''">
+                deptInfo = #{deptinfo},
+            </if>
+        </set>
+        where deptId = #{deptid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from pms.dept where deptId = #{deptid}
+    </delete>
+
+</mapper>

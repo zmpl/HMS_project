@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.PUserDao">
+
+    <resultMap type="com.entity.PUser" id="PUserMap">
+        <result property="userid" column="userId" jdbcType="INTEGER"/>
+        <result property="userloginname" column="userLoginName" jdbcType="VARCHAR"/>
+        <result property="userpwd" column="userPwd" jdbcType="VARCHAR"/>
+        <result property="username" column="userName" jdbcType="VARCHAR"/>
+        <result property="userstate" column="userState" jdbcType="INTEGER"/>
+        <result property="usercreatetime" column="userCreateTime" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PUserMap">
+        select
+          userId, userLoginName, userPwd, userName, userState, userCreateTime
+        from pms.p_user
+        where userId = #{userid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PUserMap">
+        select
+          userId, userLoginName, userPwd, userName, userState, userCreateTime
+        from pms.p_user
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PUserMap">
+        select
+          userId, userLoginName, userPwd, userName, userState, userCreateTime
+        from pms.p_user
+        <where>
+            <if test="userid != null">
+                and userId = #{userid}
+            </if>
+            <if test="userloginname != null and userloginname != ''">
+                and userLoginName = #{userloginname}
+            </if>
+            <if test="userpwd != null and userpwd != ''">
+                and userPwd = #{userpwd}
+            </if>
+            <if test="username != null and username != ''">
+                and userName = #{username}
+            </if>
+            <if test="userstate != null">
+                and userState = #{userstate}
+            </if>
+            <if test="usercreatetime != null">
+                and userCreateTime = #{usercreatetime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="userid" useGeneratedKeys="true">
+        insert into pms.p_user(userLoginName, userPwd, userName, userState, userCreateTime)
+        values (#{userloginname}, #{userpwd}, #{username}, #{userstate}, #{usercreatetime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update pms.p_user
+        <set>
+            <if test="userloginname != null and userloginname != ''">
+                userLoginName = #{userloginname},
+            </if>
+            <if test="userpwd != null and userpwd != ''">
+                userPwd = #{userpwd},
+            </if>
+            <if test="username != null and username != ''">
+                userName = #{username},
+            </if>
+            <if test="userstate != null">
+                userState = #{userstate},
+            </if>
+            <if test="usercreatetime != null">
+                userCreateTime = #{usercreatetime},
+            </if>
+        </set>
+        where userId = #{userid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from pms.p_user where userId = #{userid}
+    </delete>
+
+</mapper>
