@@ -8,17 +8,17 @@ import java.util.List;
  * (Notice)表数据库访问层
  *
  * @author makejava
- * @since 2020-05-15 01:28:57
+ * @since 2020-05-18 11:28:53
  */
 public interface NoticeDao {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param noticeid 主键
+     * @param  主键
      * @return 实例对象
      */
-    Notice queryById(Integer noticeid);
+    Notice queryById( );
 
     /**
      * 查询指定行数据
@@ -57,9 +57,9 @@ public interface NoticeDao {
     /**
      * 通过主键删除数据
      *
-     * @param noticeid 主键
+     * @param  主键
      * @return 影响行数
      */
-    int deleteById(Integer noticeid);
+    int deleteById( );
 
 }

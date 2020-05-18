@@ -6,40 +6,40 @@ import java.io.Serializable;
  * (Job)实体类
  *
  * @author makejava
- * @since 2020-05-15 01:27:38
+ * @since 2020-05-18 11:28:53
  */
 public class Job implements Serializable {
-    private static final long serialVersionUID = 750229418249397211L;
+    private static final long serialVersionUID = 305563244180358104L;
     
-    private Integer jobid;
+    private Integer id;
     
-    private String jobname;
+    private String name;
     
-    private String jobinfo;
+    private String remark;
 
 
-    public Integer getJobid() {
-        return jobid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setJobid(Integer jobid) {
-        this.jobid = jobid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getJobname() {
-        return jobname;
+    public String getName() {
+        return name;
     }
 
-    public void setJobname(String jobname) {
-        this.jobname = jobname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getJobinfo() {
-        return jobinfo;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setJobinfo(String jobinfo) {
-        this.jobinfo = jobinfo;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
 }

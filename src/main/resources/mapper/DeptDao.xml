@@ -3,23 +3,23 @@
 <mapper namespace="com.dao.DeptDao">
 
     <resultMap type="com.entity.Dept" id="DeptMap">
-        <result property="deptid" column="deptId" jdbcType="INTEGER"/>
-        <result property="deptname" column="deptName" jdbcType="VARCHAR"/>
-        <result property="deptinfo" column="deptInfo" jdbcType="VARCHAR"/>
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="DeptMap">
         select
-          deptId, deptName, deptInfo
+          id, name, remark
         from pms.dept
-        where deptId = #{deptid}
+        where id = #{id}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="DeptMap">
         select
-          deptId, deptName, deptInfo
+          id, name, remark
         from pms.dept
         limit #{offset}, #{limit}
     </select>
@@ -27,44 +27,44 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="DeptMap">
         select
-          deptId, deptName, deptInfo
+          id, name, remark
         from pms.dept
         <where>
-            <if test="deptid != null">
-                and deptId = #{deptid}
+            <if test="id != null">
+                and id = #{id}
             </if>
-            <if test="deptname != null and deptname != ''">
-                and deptName = #{deptname}
+            <if test="name != null and name != ''">
+                and name = #{name}
             </if>
-            <if test="deptinfo != null and deptinfo != ''">
-                and deptInfo = #{deptinfo}
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="deptid" useGeneratedKeys="true">
-        insert into pms.dept(deptName, deptInfo)
-        values (#{deptname}, #{deptinfo})
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into pms.dept(name, remark)
+        values (#{name}, #{remark})
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
         update pms.dept
         <set>
-            <if test="deptname != null and deptname != ''">
-                deptName = #{deptname},
+            <if test="name != null and name != ''">
+                name = #{name},
             </if>
-            <if test="deptinfo != null and deptinfo != ''">
-                deptInfo = #{deptinfo},
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
             </if>
         </set>
-        where deptId = #{deptid}
+        where id = #{id}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from pms.dept where deptId = #{deptid}
+        delete from pms.dept where id = #{id}
     </delete>
 
 </mapper>

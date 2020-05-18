@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * (Notice)表控制层
  *
  * @author makejava
- * @since 2020-05-15 01:28:57
+ * @since 2020-05-18 11:28:53
  */
 @RestController
 @RequestMapping("notice")
@@ -28,7 +28,7 @@ public class NoticeController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public Notice selectOne(Integer id) {
+    public Notice selectOne( id) {
         return this.noticeService.queryById(id);
     }
 

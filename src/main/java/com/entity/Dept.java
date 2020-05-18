@@ -6,40 +6,40 @@ import java.io.Serializable;
  * (Dept)实体类
  *
  * @author makejava
- * @since 2020-05-15 01:27:02
+ * @since 2020-05-18 11:28:53
  */
 public class Dept implements Serializable {
-    private static final long serialVersionUID = -91895466728386085L;
+    private static final long serialVersionUID = -55479223793609908L;
     
-    private Integer deptid;
+    private Integer id;
     
-    private String deptname;
+    private String name;
     
-    private String deptinfo;
+    private String remark;
 
 
-    public Integer getDeptid() {
-        return deptid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getDeptname() {
-        return deptname;
+    public String getName() {
+        return name;
     }
 
-    public void setDeptname(String deptname) {
-        this.deptname = deptname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDeptinfo() {
-        return deptinfo;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setDeptinfo(String deptinfo) {
-        this.deptinfo = deptinfo;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
 }

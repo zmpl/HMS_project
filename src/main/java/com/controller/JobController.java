@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * (Job)表控制层
  *
  * @author makejava
- * @since 2020-05-15 01:27:38
+ * @since 2020-05-18 11:28:53
  */
 @RestController
 @RequestMapping("job")
@@ -28,7 +28,7 @@ public class JobController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public Job selectOne(Integer id) {
+    public Job selectOne( id) {
         return this.jobService.queryById(id);
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
  * (Emp)表服务实现类
  *
  * @author makejava
- * @since 2020-05-14 16:22:56
+ * @since 2020-05-18 11:28:53
  */
 @Service("empService")
 public class EmpServiceImpl implements EmpService {
@@ -22,12 +22,12 @@ public class EmpServiceImpl implements EmpService {
     /**
      * 通过ID查询单条数据
      *
-     * @param empid 主键
+     * @param id 主键
      * @return 实例对象
      */
     @Override
-    public Emp queryById(Integer empid) {
-        return this.empDao.queryById(empid);
+    public Emp queryById(Integer id) {
+        return this.empDao.queryById(id);
     }
 
     /**
@@ -63,17 +63,17 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public Emp update(Emp emp) {
         this.empDao.update(emp);
-        return this.queryById(emp.getEmpid());
+        return this.queryById(emp.getId());
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param empid 主键
+     * @param id 主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer empid) {
-        return this.empDao.deleteById(empid) > 0;
+    public boolean deleteById(Integer id) {
+        return this.empDao.deleteById(id) > 0;
     }
 }

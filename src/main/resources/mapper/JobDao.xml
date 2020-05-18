@@ -3,23 +3,23 @@
 <mapper namespace="com.dao.JobDao">
 
     <resultMap type="com.entity.Job" id="JobMap">
-        <result property="jobid" column="jobId" jdbcType="INTEGER"/>
-        <result property="jobname" column="jobName" jdbcType="VARCHAR"/>
-        <result property="jobinfo" column="jobInfo" jdbcType="VARCHAR"/>
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="JobMap">
         select
-          jobId, jobName, jobInfo
+          id, name, remark
         from pms.job
-        where jobId = #{jobid}
+        where  = #{}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="JobMap">
         select
-          jobId, jobName, jobInfo
+          id, name, remark
         from pms.job
         limit #{offset}, #{limit}
     </select>
@@ -27,44 +27,38 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="JobMap">
         select
-          jobId, jobName, jobInfo
+          id, name, remark
         from pms.job
         <where>
-            <if test="jobid != null">
-                and jobId = #{jobid}
+            <if test="id != null">
+                and id = #{id}
             </if>
-            <if test="jobname != null and jobname != ''">
-                and jobName = #{jobname}
+            <if test="name != null and name != ''">
+                and name = #{name}
             </if>
-            <if test="jobinfo != null and jobinfo != ''">
-                and jobInfo = #{jobinfo}
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="jobid" useGeneratedKeys="true">
-        insert into pms.job(jobName, jobInfo)
-        values (#{jobname}, #{jobinfo})
+    <insert id="insert" keyProperty="" useGeneratedKeys="true">
+        insert into pms.job()
+        values ()
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
         update pms.job
         <set>
-            <if test="jobname != null and jobname != ''">
-                jobName = #{jobname},
-            </if>
-            <if test="jobinfo != null and jobinfo != ''">
-                jobInfo = #{jobinfo},
-            </if>
         </set>
-        where jobId = #{jobid}
+        where  = #{}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from pms.job where jobId = #{jobid}
+        delete from pms.job where  = #{}
     </delete>
 
 </mapper>

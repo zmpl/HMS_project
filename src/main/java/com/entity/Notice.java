@@ -6,28 +6,28 @@ import java.io.Serializable;
  * (Notice)实体类
  *
  * @author makejava
- * @since 2020-05-15 01:28:57
+ * @since 2020-05-18 11:28:53
  */
 public class Notice implements Serializable {
-    private static final long serialVersionUID = -58184287490088316L;
+    private static final long serialVersionUID = -71788466964551680L;
     
-    private Integer noticeid;
+    private Integer id;
     
     private String title;
-    
+
     private String content;
     
-    private Object createtime;
+    private Object createTime;
     
-    private Integer userid;
+    private Integer userId;
 
 
-    public Integer getNoticeid() {
-        return noticeid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setNoticeid(Integer noticeid) {
-        this.noticeid = noticeid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -46,20 +46,20 @@ public class Notice implements Serializable {
         this.content = content;
     }
 
-    public Object getCreatetime() {
-        return createtime;
+    public Object getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Object createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Object createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
 }

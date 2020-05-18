@@ -12,7 +12,7 @@ import java.util.List;
  * (Dept)表服务实现类
  *
  * @author makejava
- * @since 2020-05-15 01:27:02
+ * @since 2020-05-18 11:28:53
  */
 @Service("deptService")
 public class DeptServiceImpl implements DeptService {
@@ -22,12 +22,12 @@ public class DeptServiceImpl implements DeptService {
     /**
      * 通过ID查询单条数据
      *
-     * @param deptid 主键
+     * @param id 主键
      * @return 实例对象
      */
     @Override
-    public Dept queryById(Integer deptid) {
-        return this.deptDao.queryById(deptid);
+    public Dept queryById(Integer id) {
+        return this.deptDao.queryById(id);
     }
 
     /**
@@ -63,17 +63,17 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public Dept update(Dept dept) {
         this.deptDao.update(dept);
-        return this.queryById(dept.getDeptid());
+        return this.queryById(dept.getId());
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param deptid 主键
+     * @param id 主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer deptid) {
-        return this.deptDao.deleteById(deptid) > 0;
+    public boolean deleteById(Integer id) {
+        return this.deptDao.deleteById(id) > 0;
     }
 }

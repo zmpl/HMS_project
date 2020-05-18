@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (Document)实体类
  *
  * @author makejava
- * @since 2020-05-15 01:27:15
+ * @since 2020-05-18 11:28:53
  */
 public class Document implements Serializable {
-    private static final long serialVersionUID = -56307148681908394L;
+    private static final long serialVersionUID = -15028025229585765L;
     
     private Integer id;
     
@@ -17,9 +17,9 @@ public class Document implements Serializable {
     
     private String filename;
     
-    private Object createtime;
+    private Object createTime;
     
-    private Integer userid;
+    private Integer userId;
 
 
     public Integer getId() {
@@ -46,20 +46,20 @@ public class Document implements Serializable {
         this.filename = filename;
     }
 
-    public Object getCreatetime() {
-        return createtime;
+    public Object getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Object createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Object createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
 }

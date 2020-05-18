@@ -6,140 +6,140 @@ import java.io.Serializable;
  * (Emp)实体类
  *
  * @author makejava
- * @since 2020-05-14 16:22:54
+ * @since 2020-05-18 11:28:53
  */
 public class Emp implements Serializable {
-    private static final long serialVersionUID = -49405450970957689L;
+    private static final long serialVersionUID = -21182720179984480L;
     
-    private Integer empid;
+    private Integer id;
     
-    private String empname;
+    private String name;
     
-    private String empsex;
+    private String sex;
     
-    private String empphone;
+    private String phone;
     
-    private String empemail;
+    private String email;
     
-    private String empeducation;
+    private String education;
     
-    private String empcardno;
+    private String cardNo;
     
-    private String empaddress;
+    private String address;
     
-    private Object empcreatetime;
+    private Object createTime;
     
-    private Object empbirthday;
+    private Object birthday;
     
-    private String emphobby;
+    private String hobby;
     
-    private Integer jobid;
+    private Integer jobId;
     
-    private Integer deptid;
+    private Integer deptId;
 
 
-    public Integer getEmpid() {
-        return empid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setEmpid(Integer empid) {
-        this.empid = empid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getEmpname() {
-        return empname;
+    public String getName() {
+        return name;
     }
 
-    public void setEmpname(String empname) {
-        this.empname = empname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmpsex() {
-        return empsex;
+    public String getSex() {
+        return sex;
     }
 
-    public void setEmpsex(String empsex) {
-        this.empsex = empsex;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getEmpphone() {
-        return empphone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmpphone(String empphone) {
-        this.empphone = empphone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmpemail() {
-        return empemail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmpemail(String empemail) {
-        this.empemail = empemail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getEmpeducation() {
-        return empeducation;
+    public String getEducation() {
+        return education;
     }
 
-    public void setEmpeducation(String empeducation) {
-        this.empeducation = empeducation;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
-    public String getEmpcardno() {
-        return empcardno;
+    public String getCardNo() {
+        return cardNo;
     }
 
-    public void setEmpcardno(String empcardno) {
-        this.empcardno = empcardno;
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
     }
 
-    public String getEmpaddress() {
-        return empaddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEmpaddress(String empaddress) {
-        this.empaddress = empaddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public Object getEmpcreatetime() {
-        return empcreatetime;
+    public Object getCreateTime() {
+        return createTime;
     }
 
-    public void setEmpcreatetime(Object empcreatetime) {
-        this.empcreatetime = empcreatetime;
+    public void setCreateTime(Object createTime) {
+        this.createTime = createTime;
     }
 
-    public Object getEmpbirthday() {
-        return empbirthday;
+    public Object getBirthday() {
+        return birthday;
     }
 
-    public void setEmpbirthday(Object empbirthday) {
-        this.empbirthday = empbirthday;
+    public void setBirthday(Object birthday) {
+        this.birthday = birthday;
     }
 
-    public String getEmphobby() {
-        return emphobby;
+    public String getHobby() {
+        return hobby;
     }
 
-    public void setEmphobby(String emphobby) {
-        this.emphobby = emphobby;
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
 
-    public Integer getJobid() {
-        return jobid;
+    public Integer getJobId() {
+        return jobId;
     }
 
-    public void setJobid(Integer jobid) {
-        this.jobid = jobid;
+    public void setJobId(Integer jobId) {
+        this.jobId = jobId;
     }
 
-    public Integer getDeptid() {
-        return deptid;
+    public Integer getDeptId() {
+        return deptId;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
     }
 
 }

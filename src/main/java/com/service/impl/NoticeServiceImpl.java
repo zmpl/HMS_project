@@ -12,7 +12,7 @@ import java.util.List;
  * (Notice)表服务实现类
  *
  * @author makejava
- * @since 2020-05-15 01:28:57
+ * @since 2020-05-18 11:28:53
  */
 @Service("noticeService")
 public class NoticeServiceImpl implements NoticeService {
@@ -22,12 +22,12 @@ public class NoticeServiceImpl implements NoticeService {
     /**
      * 通过ID查询单条数据
      *
-     * @param noticeid 主键
+     * @param  主键
      * @return 实例对象
      */
     @Override
-    public Notice queryById(Integer noticeid) {
-        return this.noticeDao.queryById(noticeid);
+    public Notice queryById( ) {
+        return this.noticeDao.queryById();
     }
 
     /**
@@ -63,17 +63,17 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public Notice update(Notice notice) {
         this.noticeDao.update(notice);
-        return this.queryById(notice.getNoticeid());
+        return this.queryById(notice.get());
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param noticeid 主键
+     * @param  主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer noticeid) {
-        return this.noticeDao.deleteById(noticeid) > 0;
+    public boolean deleteById( ) {
+        return this.noticeDao.deleteById() > 0;
     }
 }
