@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (User)实体类
@@ -21,7 +22,7 @@ public class User implements Serializable {
     
     private Integer status;
     
-    private Object createTime;
+    private Date createTime;
 
 
     public Integer getId() {
@@ -64,12 +65,23 @@ public class User implements Serializable {
         this.status = status;
     }
 
-    public Object getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", loginName='" + loginName + '\'' +
+                ", password='" + password + '\'' +
+                ", userName='" + userName + '\'' +
+                ", status=" + status +
+                ", createTime=" + createTime +
+                '}';
+    }
 }

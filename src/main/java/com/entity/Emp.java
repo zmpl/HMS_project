@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (Emp)实体类
@@ -27,9 +28,9 @@ public class Emp implements Serializable {
     
     private String address;
     
-    private Object createTime;
+    private Date createTime;
     
-    private Object birthday;
+    private Date birthday;
     
     private String hobby;
     
@@ -102,19 +103,19 @@ public class Emp implements Serializable {
         this.address = address;
     }
 
-    public Object getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Object getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Object birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

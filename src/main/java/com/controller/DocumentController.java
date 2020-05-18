@@ -2,6 +2,8 @@ package com.controller;
 
 import com.entity.Document;
 import com.service.DocumentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,13 +14,13 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2020-05-18 11:28:53
  */
-@RestController
+@Controller
 @RequestMapping("document")
 public class DocumentController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private DocumentService documentService;
 
     /**
@@ -27,7 +29,7 @@ public class DocumentController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @RequestMapping("selectOne")
     public Document selectOne(Integer id) {
         return this.documentService.queryById(id);
     }

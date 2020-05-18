@@ -13,7 +13,7 @@
         select
           id, name, remark
         from pms.job
-        where  = #{}
+        where id = #{id}
     </select>
 
     <!--查询指定行数据-->
@@ -43,22 +43,28 @@
     </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="" useGeneratedKeys="true">
-        insert into pms.job()
-        values ()
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into pms.job(name, remark)
+        values (#{name}, #{remark})
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
         update pms.job
         <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
+            </if>
         </set>
-        where  = #{}
+        where id = #{id}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from pms.job where  = #{}
+        delete from pms.job where id = #{id}
     </delete>
 
 </mapper>

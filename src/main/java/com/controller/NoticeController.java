@@ -2,6 +2,8 @@ package com.controller;
 
 import com.entity.Notice;
 import com.service.NoticeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -10,15 +12,15 @@ import javax.annotation.Resource;
  * (Notice)表控制层
  *
  * @author makejava
- * @since 2020-05-18 11:28:53
+ * @since 2020-05-18 15:13:32
  */
-@RestController
+@Controller
 @RequestMapping("notice")
 public class NoticeController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private NoticeService noticeService;
 
     /**
@@ -27,8 +29,8 @@ public class NoticeController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
-    public Notice selectOne( id) {
+    @RequestMapping("selectOne")
+    public Notice selectOne(Integer id) {
         return this.noticeService.queryById(id);
     }
 

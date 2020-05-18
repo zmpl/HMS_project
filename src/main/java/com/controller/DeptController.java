@@ -2,6 +2,8 @@ package com.controller;
 
 import com.entity.Dept;
 import com.service.DeptService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,13 +14,13 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2020-05-18 11:28:53
  */
-@RestController
+@Controller
 @RequestMapping("dept")
 public class DeptController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private DeptService deptService;
 
     /**
@@ -27,7 +29,7 @@ public class DeptController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @RequestMapping("selectOne")
     public Dept selectOne(Integer id) {
         return this.deptService.queryById(id);
     }

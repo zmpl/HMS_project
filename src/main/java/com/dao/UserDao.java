@@ -68,5 +68,5 @@ public interface UserDao {
      * @param password 密码
      * @return 登录的帐户
      */
-    User login(String loginName,String password);
+    User login(@Param("loginName") String loginName,@Param("password") String password);
 }

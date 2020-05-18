@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (Document)实体类
@@ -17,7 +18,7 @@ public class Document implements Serializable {
     
     private String filename;
     
-    private Object createTime;
+    private Date createTime;
     
     private Integer userId;
 
@@ -46,11 +47,11 @@ public class Document implements Serializable {
         this.filename = filename;
     }
 
-    public Object getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Object createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 

@@ -89,11 +89,9 @@
     </delete>
 
     <!--通过账号密码登录-->
-    <select id="login" resultType="UserMap">
+    <select id="login" resultMap="UserMap">
         select
           id, login_name, password, user_name, status, create_time
-        from pms.user
-        where login_name=#{loginName}
-        and password=#{password}
+        from pms.user where login_name=#{loginName} and password=#{password}
     </select>
 </mapper>

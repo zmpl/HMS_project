@@ -7,17 +7,17 @@ import java.util.List;
  * (Job)表服务接口
  *
  * @author makejava
- * @since 2020-05-18 11:28:53
+ * @since 2020-05-18 15:12:45
  */
 public interface JobService {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param  主键
+     * @param id 主键
      * @return 实例对象
      */
-    Job queryById( );
+    Job queryById(Integer id);
 
     /**
      * 查询多条数据
@@ -47,9 +47,9 @@ public interface JobService {
     /**
      * 通过主键删除数据
      *
-     * @param  主键
+     * @param id 主键
      * @return 是否成功
      */
-    boolean deleteById( );
+    boolean deleteById(Integer id);
 
 }

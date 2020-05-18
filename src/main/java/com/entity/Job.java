@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (Job)实体类
  *
  * @author makejava
- * @since 2020-05-18 11:28:53
+ * @since 2020-05-18 15:12:45
  */
 public class Job implements Serializable {
-    private static final long serialVersionUID = 305563244180358104L;
+    private static final long serialVersionUID = 142751679825847382L;
     
     private Integer id;
     

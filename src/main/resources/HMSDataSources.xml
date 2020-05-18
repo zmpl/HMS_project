@@ -26,13 +26,12 @@
         <!--mybatis配置-->
         <property name="configuration">
             <bean class="org.apache.ibatis.session.Configuration">
+                <!--将下划线格式的转成驼峰命名-->
                 <property name="mapUnderscoreToCamelCase" value="true"/>
             </bean>
         </property>
         <!--设置别名-->
-        <property name="typeAliasesPackage" value="com.service">
-
-        </property>
+        <property name="typeAliasesPackage" value="com.entity"></property>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--指定mapper接口的位置-->

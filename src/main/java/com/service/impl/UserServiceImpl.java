@@ -4,6 +4,7 @@ import com.entity.User;
 import com.dao.UserDao;
 import com.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -84,7 +85,7 @@ public class UserServiceImpl implements UserService {
      * @return 登录的帐户
      */
     @Override
-    public User login(String loginName, String password) {
+    public User login(String loginName,String password) {
         return this.userDao.login(loginName,password);
     }
 }
