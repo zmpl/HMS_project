@@ -143,4 +143,22 @@ public class Emp implements Serializable {
         this.deptId = deptId;
     }
 
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", education='" + education + '\'' +
+                ", cardNo='" + cardNo + '\'' +
+                ", address='" + address + '\'' +
+                ", createTime=" + createTime +
+                ", birthday=" + birthday +
+                ", hobby='" + hobby + '\'' +
+                ", jobId=" + jobId +
+                ", deptId=" + deptId +
+                '}';
+    }
 }
